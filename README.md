@@ -2,8 +2,6 @@
 
 A RESTful backend for managing a library's books, members and borrowing transactions, built with **Java 17, Spring Boot, Spring Data JPA (Hibernate) and MySQL**.
 
-📄 **[Read Full Project Report (56-Page PDF)](docs/Library_Management_System_Final_Report.pdf)**
-
 ## Features
 - Full CRUD for **books** and **members**
 - **Borrowing transactions**: borrow a book (14-day loan), return it, and view all / active / per-member records
