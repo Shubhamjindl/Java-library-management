@@ -1,2 +1,2 @@
-spring.datasource.username=your_oracle_username
-spring.datasource.password=your_oracle_password
+spring.datasource.username=your_mysql_username
+spring.datasource.password=your_mysql_password

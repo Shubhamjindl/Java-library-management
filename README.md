@@ -1,6 +1,6 @@
 # Library Management System
 
-A RESTful backend for managing a library's books, members and borrowing transactions, built with **Java 17, Spring Boot, Spring Data JPA (Hibernate) and Oracle SQL**.
+A RESTful backend for managing a library's books, members and borrowing transactions, built with **Java 17, Spring Boot, Spring Data JPA (Hibernate) and MySQL**.
 
 ## Features
 - Full CRUD for **books** and **members**
@@ -9,7 +9,25 @@ A RESTful backend for managing a library's books, members and borrowing transact
 - Layered architecture: Controller → Service → Repository → Entity
 
 ## Tech Stack
-Java 17 · Spring Boot 3 · Spring Data JPA · Hibernate · Oracle SQL · Maven · Postman
+Java 17 · Spring Boot 3 · Spring Data JPA · Hibernate · MySQL · Maven · Postman
+
+---
+
+## 🖼️ API Testing & Screenshots
+
+| Spring Boot 3 Startup (Tomcat 8082 + MySQL) | Borrow Transaction (14-Day Loan) |
+|---|---|
+| ![Spring Boot Startup](docs/screenshots/spring-boot-startup.png) | ![Borrow Transaction](docs/screenshots/postman-borrow-transaction.png) |
+
+| Member Management (`POST /members`) | Return Book (`PUT /transactions/return`) |
+|---|---|
+| ![Add Member](docs/screenshots/postman-add-member.png) | ![Return Book](docs/screenshots/postman-return-book.png) |
+
+| Add Book (`POST /books`) | MySQL Database Verification |
+|---|---|
+| ![Add Book](docs/screenshots/postman-add-book.png) | ![MySQL Records](docs/screenshots/mysql-database-records.png) |
+
+---
 
 ## Project Structure
 ```
@@ -21,14 +39,14 @@ src/main/java/com/library/management
 ```
 
 ## Getting Started
-**Prerequisites:** JDK 17+, Oracle Database (e.g. XE on `localhost:1521`).
+**Prerequisites:** JDK 17+, MySQL Database (running on `localhost:3306`).
 
 1. Clone the repo.
 2. Create your local credentials file:
    ```bash
    cp src/main/resources/application-local.properties.example src/main/resources/application-local.properties
    ```
-   Then edit it with your Oracle username and password (this file is git-ignored).
+   Then edit it with your MySQL username and password (this file is git-ignored).
 3. If your DB URL differs, change `spring.datasource.url` in `application.properties`.
 4. Run:
    ```bash
