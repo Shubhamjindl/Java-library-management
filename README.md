@@ -20,8 +20,8 @@ Java 17 · Spring Boot 3 · Spring Data JPA · Hibernate · MySQL · Maven · Po
 |---|---|
 | ![Spring Boot Startup](docs/screenshots/spring-boot-startup.png) | ![MySQL Schema](docs/screenshots/mysql-schema.png) |
 
-### 2. Project Architecture & Postman Collection
-| IDE Project Structure | Postman REST API Collection (12 Endpoints) |
+### 2. Architecture & Postman Workspace Collection
+| IDE Project Structure | Postman REST API Collection |
 |---|---|
 | ![Project Structure](docs/screenshots/project-structure.png) | ![Postman Collection](docs/screenshots/postman-collection.png) |
 
@@ -30,23 +30,31 @@ Java 17 · Spring Boot 3 · Spring Data JPA · Hibernate · MySQL · Maven · Po
 |---|---|
 | ![Add Book](docs/screenshots/postman-add-book.png) | ![Get All Books](docs/screenshots/postman-get-all-books.png) |
 
-### 4. Member Management & Borrowing Loans
-| Member Registration (`POST /members`) | Borrow Book (14-Day Loan) (`POST /transactions/borrow`) |
+### 4. Member Management & History
+| Member Registration (`POST /members`) | Retrieve Member by ID (`GET /members/1`) |
 |---|---|
-| ![Add Member](docs/screenshots/postman-add-member.png) | ![Borrow Transaction](docs/screenshots/postman-borrow-transaction.png) |
+| ![Add Member](docs/screenshots/postman-add-member.png) | ![Get Member by ID](docs/screenshots/postman-get-member-by-id.png) |
 
-### 5. Return Processing & Database Verification
-| Return Book (`PUT /transactions/return`) | MySQL Database Verification (`library_borrow_record`) |
+| Update Member Profile (`PUT /members/1`) | Member Transaction History (`GET /transactions/member/1`) |
 |---|---|
-| ![Return Book](docs/screenshots/postman-return-book.png) | ![MySQL Records](docs/screenshots/mysql-database-records.png) |
+| ![Update Member](docs/screenshots/postman-update-member.png) | ![Transactions by Member](docs/screenshots/postman-transactions-by-member.png) |
 
-### 6. MySQL Database Tables
-| Books Table (`library_book`) | Members Table (`library_member`) |
+### 5. Borrowing & Return Processing
+| Borrow Book (14-Day Loan) (`POST /transactions/borrow`) | Return Book (`PUT /transactions/return`) |
 |---|---|
-| ![MySQL Books Table](docs/screenshots/mysql-books-table.png) | ![MySQL Members Table](docs/screenshots/mysql-members-table.png) |
+| ![Borrow Transaction](docs/screenshots/postman-borrow-transaction.png) | ![Return Book](docs/screenshots/postman-return-book.png) |
 
-<details>
-<summary><b>🔍 View Full 12-Endpoint Live Postman Test Suite</b></summary>
+### 6. MySQL Database Verification
+| All Borrow Records (`library_borrow_record`) | Books Table (`library_book`) |
+|---|---|
+| ![MySQL Records](docs/screenshots/mysql-database-records.png) | ![MySQL Books Table](docs/screenshots/mysql-books-table.png) |
+
+| Members Table (`library_member`) | Hibernate Relational Schema (3 Tables) |
+|---|---|
+| ![MySQL Members Table](docs/screenshots/mysql-members-table.png) | ![MySQL Schema](docs/screenshots/mysql-schema.png) |
+
+<details open>
+<summary><b>🔍 View Full 15-Endpoint Live Postman Test Suite</b></summary>
 
 | # | Endpoint | Description | Screenshot |
 |---|---|---|---|
@@ -62,6 +70,9 @@ Java 17 · Spring Boot 3 · Spring Data JPA · Hibernate · MySQL · Maven · Po
 | 10 | `GET /transactions/active` | Retrieve active loans | [View Screenshot](docs/screenshots/postman-tests/10-get-active-loans.png) |
 | 11 | `PUT /transactions/return/{id}` | Return borrowed book | [View Screenshot](docs/screenshots/postman-tests/11-put-return-book.png) |
 | 12 | `GET /transactions` | Complete borrowing audit history | [View Screenshot](docs/screenshots/postman-tests/12-get-all-transactions.png) |
+| 13 | `GET /members/{id}` | Retrieve member by ID | [View Screenshot](docs/screenshots/postman-tests/13-get-member-by-id.png) |
+| 14 | `PUT /members/{id}` | Update member profile | [View Screenshot](docs/screenshots/postman-tests/14-put-update-member.png) |
+| 15 | `GET /transactions/member/{memberId}` | History for specific member | [View Screenshot](docs/screenshots/postman-tests/15-get-transactions-by-member.png) |
 
 </details>
 
