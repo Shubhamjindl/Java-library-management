@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.library.management.entity.Member;
+import com.library.management.repository.BorrowRecordRepository;
 import com.library.management.repository.MemberRepository;
 
 @Service
@@ -15,6 +16,9 @@ public class MemberService {
 
     @Autowired
     private MemberRepository repository;
+
+    @Autowired
+    private BorrowRecordRepository borrowRecordRepository;
 
     public Member saveMember(Member member) {
         member.setId(null); // let the database generate the id
@@ -27,7 +31,7 @@ public class MemberService {
 
     public Member getMemberById(Long id) {
         return repository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Member not found"));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Member not found with id: " + id));
     }
 
     public Member updateMember(Long id, Member member) {
@@ -37,10 +41,13 @@ public class MemberService {
     }
 
     public String deleteMember(Long id) {
-        if (repository.existsById(id)) {
-            repository.deleteById(id);
-            return "Member Deleted Successfully";
+        if (!repository.existsById(id)) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Member not found with id: " + id);
         }
-        return "Member Not Found";
+        if (borrowRecordRepository.existsByMember_Id(id)) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Cannot delete member: borrowing records exist for this member");
+        }
+        repository.deleteById(id);
+        return "Member Deleted Successfully";
     }
 }
