@@ -35,12 +35,6 @@ public class BookController {
         return service.updateBook(id, book);
     }
 
-    @PutMapping
-    public Book updateBookWithoutIdInPath(@RequestBody Book book) {
-        int id = book.getId() != null ? book.getId() : 0;
-        return service.updateBook(id, book);
-    }
-
     @DeleteMapping("/{id}")
     public String deleteBook(@PathVariable int id) {
         return service.deleteBook(id);
