@@ -1,4 +1,4 @@
-package com.library.management.controller.ui;
+package com.library.management.controller;
 
 import java.util.List;
 import java.util.Set;
