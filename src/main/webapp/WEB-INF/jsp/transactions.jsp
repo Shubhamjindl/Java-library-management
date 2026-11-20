@@ -27,14 +27,13 @@
 <div class="row g-4">
     <div class="col-12">
         <div class="card shadow-sm table-card">
-            <div class="card-header bg-white py-3 border-0 d-flex justify-content-between align-items-center">
+            <div class="card-header bg-white py-3 border-0">
                 <h5 class="card-title fw-bold mb-0">
                     <i class="bi bi-receipt me-2 text-info"></i>Records (${records != null ? records.size() : 0})
                     <c:if test="${not empty selectedMemberId}">
                         <span class="badge bg-primary-subtle text-primary ms-2">Member #${selectedMemberId}</span>
                     </c:if>
                 </h5>
-                <span class="badge bg-light text-dark border">Immutable Audit Trail</span>
             </div>
             <div class="table-responsive">
                 <table class="table table-hover align-middle mb-0">

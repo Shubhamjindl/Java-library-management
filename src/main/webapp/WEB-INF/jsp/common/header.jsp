@@ -105,18 +105,7 @@
                             <i class="bi bi-clock-history me-1"></i> Transactions
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link ${activeTab == 'servlet' ? 'active' : ''}" href="${pageContext.request.contextPath}/servlet/summary">
-                            <i class="bi bi-cpu me-1"></i> Servlet Demo
-                        </a>
-                    </li>
                 </ul>
-                <div class="d-flex align-items-center">
-                    <span class="badge bg-secondary me-2">REST API Port: 8082</span>
-                    <a href="${pageContext.request.contextPath}/books" target="_blank" class="btn btn-outline-info btn-sm">
-                        <i class="bi bi-code-slash me-1"></i> Raw JSON API
-                    </a>
-                </div>
             </div>
         </div>
     </nav>

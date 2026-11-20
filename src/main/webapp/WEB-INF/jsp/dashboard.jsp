@@ -137,16 +137,6 @@
                 <a href="${pageContext.request.contextPath}/ui/borrow" class="btn btn-outline-warning text-dark text-start py-2">
                     <i class="bi bi-arrow-left-right me-2 fs-5"></i> Issue / Return Loan
                 </a>
-                <a href="${pageContext.request.contextPath}/servlet/summary" class="btn btn-outline-info text-start py-2">
-                    <i class="bi bi-cpu me-2 fs-5"></i> Pure Servlet Demo
-                </a>
-            </div>
-
-            <div class="mt-4 p-3 bg-light rounded border">
-                <h6 class="fw-bold mb-1"><i class="bi bi-shield-check text-success me-1"></i> Architecture Note</h6>
-                <small class="text-muted d-block">
-                    This interface is rendered server-side via <strong>Spring MVC + JSP</strong>, sharing the same persistence layer and service rules as the 15 REST endpoints.
-                </small>
             </div>
         </div>
     </div>

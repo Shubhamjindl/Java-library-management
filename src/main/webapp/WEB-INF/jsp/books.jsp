@@ -20,11 +20,10 @@
     <!-- Books List Table -->
     <div class="col-12">
         <div class="card shadow-sm table-card">
-            <div class="card-header bg-white py-3 border-0 d-flex justify-content-between align-items-center">
+            <div class="card-header bg-white py-3 border-0">
                 <h5 class="card-title fw-bold mb-0">
                     <i class="bi bi-bookshelf me-2 text-primary"></i>Book Catalog (${books != null ? books.size() : 0})
                 </h5>
-                <span class="badge bg-light text-dark border">Auto-synced with MySQL</span>
             </div>
             <div class="table-responsive">
                 <table class="table table-hover align-middle mb-0">

@@ -1,12 +1,9 @@
     </div> <!-- Close .container -->
 
     <!-- Footer -->
-    <footer class="py-3 mt-auto border-top">
+    <footer class="py-3 mt-auto bg-dark border-top">
         <div class="container text-center">
-            <p class="mb-1 text-light">Library Management System &copy; 2026</p>
-            <small class="text-secondary">
-                Spring Boot 3 · Spring Data JPA · MySQL 8 · JSP & Servlet MVC Frontend · 15 REST Endpoints
-            </small>
+            <p class="mb-0 text-secondary small">&copy; 2026 Library Management System. All rights reserved.</p>
         </div>
     </footer>
 
